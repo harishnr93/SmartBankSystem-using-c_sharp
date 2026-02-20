@@ -1,0 +1,15 @@
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/helloworld/bin/Debug/net8.0/helloworld
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/helloworld/bin/Debug/net8.0/helloworld.deps.json
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/helloworld/bin/Debug/net8.0/helloworld.runtimeconfig.json
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/helloworld/bin/Debug/net8.0/helloworld.dll
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/helloworld/bin/Debug/net8.0/helloworld.pdb
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/helloworld/obj/Debug/net8.0/helloworld.GeneratedMSBuildEditorConfig.editorconfig
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/helloworld/obj/Debug/net8.0/helloworld.AssemblyInfoInputs.cache
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/helloworld/obj/Debug/net8.0/helloworld.AssemblyInfo.cs
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/helloworld/obj/Debug/net8.0/helloworld.csproj.CoreCompileInputs.cache
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/helloworld/obj/Debug/net8.0/helloworld.sourcelink.json
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/helloworld/obj/Debug/net8.0/helloworld.dll
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/helloworld/obj/Debug/net8.0/refint/helloworld.dll
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/helloworld/obj/Debug/net8.0/helloworld.pdb
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/helloworld/obj/Debug/net8.0/helloworld.genruntimeconfig.cache
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/helloworld/obj/Debug/net8.0/ref/helloworld.dll
