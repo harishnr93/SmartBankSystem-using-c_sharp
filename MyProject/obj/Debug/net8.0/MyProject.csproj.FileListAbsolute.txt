@@ -1,0 +1,15 @@
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/MyProject/bin/Debug/net8.0/MyProject
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/MyProject/bin/Debug/net8.0/MyProject.deps.json
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/MyProject/bin/Debug/net8.0/MyProject.runtimeconfig.json
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/MyProject/bin/Debug/net8.0/MyProject.dll
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/MyProject/bin/Debug/net8.0/MyProject.pdb
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/MyProject/obj/Debug/net8.0/MyProject.GeneratedMSBuildEditorConfig.editorconfig
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/MyProject/obj/Debug/net8.0/MyProject.AssemblyInfoInputs.cache
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/MyProject/obj/Debug/net8.0/MyProject.AssemblyInfo.cs
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/MyProject/obj/Debug/net8.0/MyProject.csproj.CoreCompileInputs.cache
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/MyProject/obj/Debug/net8.0/MyProject.sourcelink.json
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/MyProject/obj/Debug/net8.0/MyProject.dll
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/MyProject/obj/Debug/net8.0/refint/MyProject.dll
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/MyProject/obj/Debug/net8.0/MyProject.pdb
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/MyProject/obj/Debug/net8.0/MyProject.genruntimeconfig.cache
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/MyProject/obj/Debug/net8.0/ref/MyProject.dll
