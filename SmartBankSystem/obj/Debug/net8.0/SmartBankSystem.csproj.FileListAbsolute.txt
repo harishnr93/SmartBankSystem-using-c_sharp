@@ -1,0 +1,15 @@
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/SmartBankSystem/bin/Debug/net8.0/SmartBankSystem
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/SmartBankSystem/bin/Debug/net8.0/SmartBankSystem.deps.json
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/SmartBankSystem/bin/Debug/net8.0/SmartBankSystem.runtimeconfig.json
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/SmartBankSystem/bin/Debug/net8.0/SmartBankSystem.dll
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/SmartBankSystem/bin/Debug/net8.0/SmartBankSystem.pdb
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/SmartBankSystem/obj/Debug/net8.0/SmartBankSystem.GeneratedMSBuildEditorConfig.editorconfig
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/SmartBankSystem/obj/Debug/net8.0/SmartBankSystem.AssemblyInfoInputs.cache
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/SmartBankSystem/obj/Debug/net8.0/SmartBankSystem.AssemblyInfo.cs
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/SmartBankSystem/obj/Debug/net8.0/SmartBankSystem.csproj.CoreCompileInputs.cache
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/SmartBankSystem/obj/Debug/net8.0/SmartBankSystem.sourcelink.json
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/SmartBankSystem/obj/Debug/net8.0/SmartBankSystem.dll
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/SmartBankSystem/obj/Debug/net8.0/refint/SmartBankSystem.dll
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/SmartBankSystem/obj/Debug/net8.0/SmartBankSystem.pdb
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/SmartBankSystem/obj/Debug/net8.0/SmartBankSystem.genruntimeconfig.cache
+/home/ubuntu_22/rptu_ws/c_sharp/c_sharp_programming/SmartBankSystem/obj/Debug/net8.0/ref/SmartBankSystem.dll

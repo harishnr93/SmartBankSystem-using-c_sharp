@@ -1,0 +1,183 @@
+
+╔══════════════════════════════════════╗
+║  SmartBank System — C# Feature Demo  ║
+╚══════════════════════════════════════╝
+
+── 1. ACCOUNT CREATION ───────────────────────────────────────
+  Savings  | SAV-001  | Alice Johnson   | $1,000.00
+  Checking | CHK-001 | Bob Smith       | $2,500.00
+  Business | BUS-001 | Carol White     | $50,000.00
+
+── 2. DELEGATES & LOGGER (MULTICAST / CHAINING) ──────────────
+  [LOG 11:51:44] SmartBank initialised — 3 loggers active
+  [AUDIT] SmartBank initialised — 3 loggers active
+  [NAMED-DELEGATE] SmartBank initialised — 3 loggers active
+  [LOG 11:51:44] After removal — 2 loggers active
+  [AUDIT] After removal — 2 loggers active
+  Anonymous delegate test (100): True
+
+── 3. EVENTS ─────────────────────────────────────────────────
+  Events subscribed (savings: 2 handlers, checking: 1 handler).
+
+── 4. LAMBDA EXPRESSIONS & RULE ENGINE ───────────────────────
+  Composite rule on $500 deposit: True
+  Rules configured on all accounts.
+
+── 5. TRANSACTIONS ───────────────────────────────────────────
+  [LOG 11:51:44] [SAV] $1,000.00 → $1,500.00 | Deposit
+  [AUDIT] [SAV] $1,000.00 → $1,500.00 | Deposit
+  [OK] Deposited $500.00 → SAV-001
+  [LOG 11:51:44] [SAV] $1,500.00 → $16,500.00 | Deposit
+  [AUDIT] [SAV] $1,500.00 → $16,500.00 | Deposit
+  [OK] Deposited $15,000.00 → SAV-001
+  [LOG 11:51:44] [SAV] $16,500.00 → $16,300.00 | Withdrawal
+  [AUDIT] [SAV] $16,500.00 → $16,300.00 | Withdrawal
+  [OK] Withdrew $200.00 ← SAV-001
+  [LOG 11:51:44] [SAV] $16,300.00 → $17,115.00 | Deposit
+  [AUDIT] [SAV] $16,300.00 → $17,115.00 | Deposit
+  [OK] Deposited $815.00 → SAV-001
+  [CHK EVENT] Balance updated → $3,500.00
+  [OK] Deposited $1,000.00 → CHK-001
+  [CHK EVENT] Balance updated → $3,200.00
+  [OK] Withdrew $300.00 ← CHK-001
+  [CHK EVENT] Balance updated → $2,950.00
+  [LOG 11:51:44] [SAV] $17,115.00 → $17,365.00 | Deposit
+  [AUDIT] [SAV] $17,115.00 → $17,365.00 | Deposit
+  [OK] Transferred $250.00: CHK-001 → SAV-001
+  [OK] Business deposit $25,000.00 → BUS-001 (ACME Corp)
+  [OK] Business withdrawal $5,000.00 ← BUS-001
+
+  -- Rule Rejection Tests --
+  [REJECTED] Deposit -$50.00 — failed rule validation.
+  [REJECTED] Deposit $2,000,000.00 — failed rule validation.
+
+── 6. INDEXERS & RANGES (C# 8+) ──────────────────────────────
+  savings[0]  (first) : [Deposit     ]      $500.00 | Monthly paycheck | 2026-02-22 10:51:44
+  savings[^1] (last)  : [Deposit     ]      $250.00 | Transfer from CHK-001 | 2026-02-22 10:51:44
+  savings[0..2] (slice):
+    [Deposit     ]      $500.00 | Monthly paycheck | 2026-02-22 10:51:44
+    [Deposit     ]   $15,000.00 | Annual bonus | 2026-02-22 10:51:44
+
+── 7. STRUCTURAL PATTERN MATCHING ────────────────────────────
+  ┌─ Transaction Analysis
+  │  Type           : Deposit
+  │  Amount         : $15,000.00
+  │  Description    : Large deposit
+  │  Classification : HIGH_VALUE_DEPOSIT
+  │  Risk Level     : MEDIUM_RISK
+  │  Amount Band    : LARGE
+  │  *** LARGE DEPOSIT FLAG ***
+  └─────────────────────────
+  ┌─ Transaction Analysis
+  │  Type           : Withdrawal
+  │  Amount         : $500.00
+  │  Description    : Regular withdrawal
+  │  Classification : STANDARD_WITHDRAWAL
+  │  Risk Level     : LOW_RISK
+  │  Amount Band    : SMALL
+  └─────────────────────────
+  ┌─ Transaction Analysis
+  │  Type           : Transfer
+  │  Amount         : $8,000.00
+  │  Description    : Inter-account move
+  │  Classification : STANDARD_TRANSFER
+  │  Risk Level     : LOW_RISK
+  │  Amount Band    : MEDIUM
+  │  *** SIGNIFICANT TRANSFER → CHK-001 ***
+  └─────────────────────────
+  ┌─ Transaction Analysis
+  │  Type           : Deposit
+  │  Amount         : $50.00
+  │  Description    : Micro top-up
+  │  Classification : MICRO_DEPOSIT
+  │  Risk Level     : LOW_RISK
+  │  Amount Band    : MICRO
+  └─────────────────────────
+
+  -- Switch Expression --
+  HIGH-VALUE DEPOSIT      : $15,000.00
+  Withdrawal              : $500.00
+  Transfer → CHK-001 : $8,000.00
+  Deposit                 : $50.00
+
+── 8. DECONSTRUCTION ─────────────────────────────────────────
+  Deposit (3-param) : Type=Deposit, Amount=$1,500.00, Desc=Test deposit
+  Transfer (4-param): Transfer, $3,000.00 → SAV-001, Note: Salary allocation
+  Tuple             : SAV-001 | Alice Johnson | $17,365.00
+
+── 9. NULL COALESCING ────────────────────────────────────────
+  ?? operator          : 'No description provided'
+  ??= assignment       : Savings | SAV-001 | Alice Johnson | $17,365.00 | Rate: 5.0% | Txns: 5
+  Null account ?.??    : $0.00  (no NullReferenceException)
+  Default desc (ctor)  : 'No description'
+
+── 10. INTERFACES ────────────────────────────────────────────
+  IAccount.Balance     : $17,365.00
+  [AUDIT] SavingsAccount SAV-001 | Owner: Alice Johnson | Balance: $17,365.00 | Rate: 5.0%
+  Savings | SAV-001 | Alice Johnson | $17,365.00 | Rate: 5.0% | Txns: 5
+  [AUDIT] BusinessAccount BUS-001 | ACME Corp | Owner: Carol White | Balance: $70,000.00 | Daily Limit: $100,000.00
+  Business | BUS-001 | ACME Corp | Carol White | $70,000.00 | Daily Limit: $100,000.00 | Txns: 2
+
+  All accounts via IAccount interface:
+    SAV-001 | Alice Johnson   | $17,365.00
+      [Auditable] Savings | SAV-001 | Alice Johnson | $17,365.00 | Rate: 5.0% | Txns: 5
+    CHK-001 | Bob Smith       | $2,950.00
+    BUS-001 | Carol White     | $70,000.00
+      [Auditable] Business | BUS-001 | ACME Corp | Carol White | $70,000.00 | Daily Limit: $100,000.00 | Txns: 2
+
+── 11. CUSTOM COMPARISONS (IComparable<T>) ───────────────────
+  Sorted by Amount descending (IComparable<Transaction>):
+    Transfer     |   $10,000.00 | D
+    Withdrawal   |    $2,000.00 | B
+    Deposit      |      $500.00 | A
+    Deposit      |      $150.00 | C
+    Deposit      |       $75.00 | E
+
+── 12. LITERAL NUMBER IMPROVEMENTS ───────────────────────────
+  Max Transfer Limit : $1,000,000.00
+  FD Insurance Limit : $250,000.00
+  Batch Size         : 10,000
+  Total Ledger       : 100,000,000
+  Permissions (bin)  : READ=0001  WRITE=0010  ALL=0111
+  Flag Mask (hex)    : 0xFF00
+  Blue (hex)         : 0x0000FF
+
+── 13. ACCOUNT STATEMENTS ────────────────────────────────────
+
+══════════════════════════════════════════════════
+  Account : SAV-001  |  SavingsAccount
+  Owner   : Alice Johnson
+  Balance : $17,365.00
+  ────────────────────────────────────────────────
+  Transactions (5):
+    [0] [Deposit     ]      $500.00 | Monthly paycheck | 2026-02-22 10:51:44
+    [1] [Deposit     ]   $15,000.00 | Annual bonus | 2026-02-22 10:51:44
+    [2] [Withdrawal  ]      $200.00 | ATM withdrawal | 2026-02-22 10:51:44
+    [3] [Deposit     ]      $815.00 | Interest @ 5% | 2026-02-22 10:51:44
+    [4] [Deposit     ]      $250.00 | Transfer from CHK-001 | 2026-02-22 10:51:44
+══════════════════════════════════════════════════
+
+══════════════════════════════════════════════════
+  Account : CHK-001  |  CheckingAccount
+  Owner   : Bob Smith
+  Balance : $2,950.00
+  ────────────────────────────────────────────────
+  Transactions (3):
+    [0] [Deposit     ]    $1,000.00 | Direct deposit | 2026-02-22 10:51:44
+    [1] [Withdrawal  ]      $300.00 | Grocery store | 2026-02-22 10:51:44
+    [2] [Transfer    ]      $250.00 | Savings top-up | 2026-02-22 10:51:44
+══════════════════════════════════════════════════
+
+══════════════════════════════════════════════════
+  Account : BUS-001  |  BusinessAccount
+  Owner   : Carol White
+  Balance : $70,000.00
+  ────────────────────────────────────────────────
+  Transactions (2):
+    [0] [Deposit     ]   $25,000.00 | Client payment - INV-2025-042 | 2026-02-22 10:51:44
+    [1] [Withdrawal  ]    $5,000.00 | Office supplies - PO-0192 | 2026-02-22 10:51:44
+══════════════════════════════════════════════════
+
+╔═══════════════════════════╗
+║  SmartBank Demo Complete  ║
+╚═══════════════════════════╝
